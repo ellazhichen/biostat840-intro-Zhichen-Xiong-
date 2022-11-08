@@ -1,1 +1,1 @@
-Sitemap: https://github.com/ellazhichen/biostat840-intro-Zhichen-Xiong-/sitemap.xml
+Sitemap: https://ellazhichen.github.io/biostat840-intro-Zhichen-Xiong-/sitemap.xml

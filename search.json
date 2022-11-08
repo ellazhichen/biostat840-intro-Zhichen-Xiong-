@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zhichen Xiong(Ella)’s Website",
+    "section": "",
+    "text": "I am Zhichen Xiong. You can call me Ella.\nI come from China and this is my fifth year in the United States. Right now I am the first year master student in the Department of Biostatistics at Johns Hopkins Bloomberg School of Public Health\nI like travelling, trying different kinds of food, singing in karaoke, and some sports like pingpang, badminton, and volleyball.\n\n\n\nThe Brooklyn Bridge in New York"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Personal Interest\nI like using Python and R to do data mining and want to go to industry after graduation. Besides, I like to learn new coding skills to be more professional on data analysis."
+  },
+  {
     "objectID": "analysis.html",
     "href": "analysis.html",
     "title": "Example Analysis",
@@ -19,19 +33,5 @@
     "title": "Example Analysis",
     "section": "Part 4B: Tasks",
     "text": "Part 4B: Tasks\n\nrain_df %>% ggplot(aes(y = sample_mean, x = year, color = city_name)) +\n  geom_point() + geom_line() + facet_wrap(vars(city_name))+\n  geom_errorbar(aes(x = year, ymin = lower_bound, ymax = upper_bound),width=0.2,size=0.3)+\n  labs(x = \"Time of Record(Year)\", y = \"Mean Values of Rainfall\", \n       title = \"Plot of Average rainfall of Each Year for Each City\",\n       subtitle = \"Except Canberra, the amount of Rainfall in other 4 cities has reduced after 2018.\",\n       caption = \"Here use 95% confidence intervals.\") +\n  theme(plot.title = element_text(color=\"steelblue\", face=\"bold\"),\n        plot.subtitle = element_text(face=\"italic\"),\n        axis.text.x=element_text(size=6)) + \n  scale_color_discrete(name = \"City Names\")"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Zhichen Xiong(Ella)’s Website",
-    "section": "",
-    "text": "I am Zhichen Xiong. You can call me Ella.\nI come from China and this is my fifth year in the United States. Right now I am the first year master student in the Department of Biostatistics at Johns Hopkins Bloomberg School of Public Health\nI like travelling, trying different kinds of food, singing in karaoke, and some sports like pingpang, badminton, and volleyball.\n\n\n\nThe Brooklyn Bridge in New York"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Personal Interest\nI like using Python and R to do data mining and want to go to industry after graduation. Besides, I like to learn new coding skills to be more professional on data analysis."
   }
 ]
