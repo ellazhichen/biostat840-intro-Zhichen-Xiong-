@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+# Education
+
+I finished my undergraduate degree in University of Minnesota (Bachelor of Science, Statistics and Mathematics). And right now I am the first year master student of ScM biostatistics student in Johns Hopkins University.
+
+# Personal Interest
+
+I like using Python and R to do data mining and want to go to industry after graduation. Besides, I like to learn new coding skills to be more professional on data analysis.
+
+
+
