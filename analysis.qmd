@@ -4,7 +4,9 @@ editor: visual
 bibliography: my-refs.bib
 ---
 
-This data is "about Australia, including it's climate over time and recent fires."(in-text citation?) I want to see the changes of rainfall corresponding to different temperatures and years in Australia.
+## Data & Analysis Goal
+
+This data is about the amount of rainfall and the changes of temperatures over times in Australia. I want to see the changes of rainfall and corresponding to different years in Australia.
 
 And this data analysis will help meteorologists, botanists better understand the climate of Australia.
 
@@ -12,6 +14,8 @@ And this data analysis will help meteorologists, botanists better understand the
 
 The two datasets I used here comes from TidyTuesday. Here is the link of the data set: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-07
 
+
+## Data Visualization
 ```{r, warning=FALSE, message=FALSE}
 library(here)
 library(tidyverse)
@@ -19,6 +23,7 @@ library(lubridate)
 ```
 
 ```{r, , message=FALSE}
+#Download the data sets
 if(!file.exists(here("data","tuesdata_rainfall.RDS"))){
   tuesdata <- tidytuesdayR::tt_load('2020-01-07')
   rainfall <- tuesdata$rainfall
@@ -53,7 +58,7 @@ rainfall_d$city_name = toupper(rainfall_d$city_name)
 df = rainfall_d %>% inner_join(temperature, by = c("city_name", "date"))
 ```
 
-## Plotting temperature data over time
+### Plotting temperature data over time
 
 ```{r}
 library(ggplot2)
@@ -61,12 +66,9 @@ df %>% filter(year >= 2014) %>%
   ggplot(aes(x = date, y = temperature, color = temp_type)) + 
   geom_line()  + facet_wrap(vars(city_name)) +
   labs(x = "Time of Record(Year)", y = "Temperature (Celsius)", 
-       title = "Minimum and Maximum Temperature 
-       for Different Cities After 2014",
-       subtitle = "The trends of maximum and minimum 
-       temperatures over time are consistent.\nThey are cyclical.",
-       caption = "Each line plot shows the temperature 
-       changes over time for each city.") +
+       title = "Minimum and Maximum Temperature for Different Cities After 2014",
+       subtitle = "The trends of maximum and minimum temperatures over time are consistent.\nThey are cyclical.",
+       caption = "Each line plot shows the temperature changes over time for each city.") +
   theme(plot.title = element_text(color="steelblue", face="bold"),
         plot.subtitle = element_text(face="italic"), 
         legend.key.size = unit(0.8, 'cm')) + 
@@ -76,6 +78,8 @@ df %>% filter(year >= 2014) %>%
 ```
 
 ::: {.callout-tip collapse="true"}
+## Ideals about the function
+
 Since we know that there are two arguments (city_name and year) we need to put. Other than that, it is the same.
 
 1.  I find out all the cities that occur in our data set. And the check if the city name we enter is one of the cities recorded in our data set. If not. then report the error.
@@ -85,7 +89,9 @@ Since we know that there are two arguments (city_name and year) we need to put. 
 3.  If we get yes for both check, then we can draw the histogram of rainfall for the given year and city.
 :::
 
+### Plotting rainfall data over time
 ```{r}
+#Create the function to plot the amount of rainfall in a specific year for one city in Austalia
 rainfall_plot = function(name, time){
   cityname_list = df$city_name %>% unique()
   if (name %in% cityname_list){
@@ -110,8 +116,7 @@ rainfall_plot = function(name, time){
     }
   }
   else{
-    error_name = "There is no rainfull recorded for the city 
-    you entered! \nPlease change the city name."
+    error_name = "There is no rainfull recorded for the city you entered! \nPlease change the city name."
     stop(error_name)
   }
   }
@@ -149,6 +154,7 @@ rainfall_plot("SYDNEY", 2000)
 rainfall_plot("MELBOURNE", 2000)
 ```
 
+
 ```{r}
 calculate_CI <- function(x, conf) {
         alpha <- 1 - conf
@@ -159,6 +165,7 @@ calculate_CI <- function(x, conf) {
 }
 ```
 
+### Plotting the average rainfall of each Year for each City with 95% Condidence Interval
 ```{r, warning=FALSE, message=FALSE}
 rain_df = df %>% filter(year >= 2014) %>% 
   select(city_name, date, rainfall, year, station_name) %>% 
@@ -168,7 +175,6 @@ rain_df = df %>% filter(year >= 2014) %>%
             upper_bound = calculate_CI(rainfall, 0.95)[2])
 ```
 
-## Part 4B: Tasks
 
 ```{r, warning=FALSE}
 rain_df %>% ggplot(aes(y = sample_mean, x = year, color = city_name)) +
@@ -183,3 +189,22 @@ rain_df %>% ggplot(aes(y = sample_mean, x = year, color = city_name)) +
         axis.text.x=element_text(size=6)) + 
   scale_color_discrete(name = "City Names")
 ```
+
+## Analysis
+
+From the temperature plot, we can see that the changes of the maximum and minimum temperatures each city are synchronized with the same trend in each year. And the changes is cyclical and the temperatures are almost the same in the same month each year.
+
+For the changes of the amount of rainfall is not with certain trends. But from the last plots, we can see that the amount of rainfall is kind of reducing, and some cities' rainfalls suddenly reduce a lot.
+
+## Functions I use
+
+**ggplot**: ggplot(), geom_point(), geom_line(), geom_histogram(), stat_bin(), geom_errorbar(), labs(), theme(), scale_color_discrete()
+
+**dplyr**: filter(), group_by, summarise(), unique(), mutate(), select()
+
+**tidyr**: drop_na()
+
+
+
+
+
