@@ -10,4 +10,4 @@ I come from China and this is my fifth year in the United States. Right now I am
 
 I like travelling, trying different kinds of food, singing in karaoke, and some sports like pingpang, badminton, and volleyball.
 
-![The Brooklyn Bridge in New York](images/IMG_0946.JPG){width=50%}
+<center>![The Brooklyn Bridge in New York](images/IMG_0946.JPG){width="50%"}</center>
