@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Zhichen Xiong(Ella)’s Website",
-    "section": "",
-    "text": "I am Zhichen Xiong. You can call me Ella.\nI come from China and this is my fifth year in the United States. Right now I am the first year master student in the Department of Biostatistics at Johns Hopkins Bloomberg School of Public Health\nI like travelling, trying different kinds of food, singing in karaoke, and some sports like pingpang, badminton, and volleyball.\n\n\n\n\nThe Brooklyn Bridge in New York"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Personal Interest\nI like using Python and R to do data mining and want to go to industry after graduation. Besides, I like to learn new coding skills to be more professional on data analysis."
+    "text": "Education\nI finished my undergraduate degree in University of Minnesota (Bachelor of Science, Statistics and Mathematics). And right now I am the first year master student of ScM biostatistics student in Johns Hopkins University.\n\n\nPersonal Interest\nI like using Python and R to do data mining and want to go to industry after graduation. Besides, I like to learn new coding skills to be more professional on data analysis."
   },
   {
     "objectID": "analysis.html",
@@ -40,5 +33,12 @@
     "title": "Example Analysis",
     "section": "Functions I use",
     "text": "Functions I use\nggplot: ggplot(), geom_point(), geom_line(), geom_histogram(), stat_bin(), geom_errorbar(), labs(), theme(), scale_color_discrete()\ndplyr: filter(), group_by, summarise(), unique(), mutate(), select()\ntidyr: drop_na()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zhichen Xiong(Ella)’s Website",
+    "section": "",
+    "text": "Hi, welcome to my website!\nI am Zhichen Xiong. You can call me Ella.\nI come from China and this is my fifth year in the United States. Right now I am the first year master student in the Department of Biostatistics at Johns Hopkins Bloomberg School of Public Health\nI like travelling, trying different kinds of food, singing in karaoke, and some sports like pingpang, badminton, and volleyball.\n\n\n\n\nThe Brooklyn Bridge in New York"
   }
 ]
